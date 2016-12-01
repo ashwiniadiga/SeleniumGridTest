@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="IT Test runner" parallel="classes" thread-count="2">
+    <!--<listeners>-->
+        <!--<listener class-name="com.report.CustomRunner"></listener>-->
+    <!--</listeners>-->
+    <test name="Library Runner">
+        <classes>
+            <class name="com.conf.LibraryRunner" />
+        </classes>
+    </test>
+
+</suite>
