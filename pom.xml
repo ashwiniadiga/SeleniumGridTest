@@ -85,11 +85,15 @@
       <version>1.2.1</version>
     </dependency>
   </dependencies>
+  <profiles>
+    <profile>
+      <id>integrationTest</id>
   <build>
     <finalName>testselenium</finalName>
     <plugins>
 
       <!-- Following plugin executes the testng tests -->
+
       <plugin>
         <artifactId>maven-failsafe-plugin</artifactId>
         <version>2.19.1</version>
@@ -135,5 +139,6 @@
       </testResource>
     </testResources>
   </build>
-
+    </profile>
+</profiles>
 </project>

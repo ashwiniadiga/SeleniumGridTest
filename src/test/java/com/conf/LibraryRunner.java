@@ -10,7 +10,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 //@RunWith(Cucumber.class)
 @CucumberOptions(features ="test-classes/com/resources/cucumber/Library.feature",
         glue ="com/test",
-        tags = "@TEST",
+        tags = "@FIRSTTEST",
         plugin ={"pretty"})
 public class LibraryRunner extends CustomRunner{
 

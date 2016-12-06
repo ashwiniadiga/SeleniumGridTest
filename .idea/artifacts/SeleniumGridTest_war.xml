@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="SeleniumGridTest:war">
     <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="testselenium.war">
+    <root id="archive" name="testselenium-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="SeleniumGridTest:war exploded" />
     </root>
   </artifact>

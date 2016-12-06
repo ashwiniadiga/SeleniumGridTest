@@ -1,6 +1,6 @@
 package com.report;
 
-import com.beust.jcommander.Parameter;
+import com.base.WebDriverBase;
 import cucumber.api.testng.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,7 +8,6 @@ import org.testng.IHookCallBack;
 import org.testng.IHookable;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -44,12 +43,13 @@ import java.io.IOException;
         public void run(IHookCallBack iHookCallBack, ITestResult iTestResult) {
             LOG.info("++++++++++run_cukes+++++++++");
             iHookCallBack.runTestMethod(iTestResult);
+            LOG.info("++++++++++++++++"+iTestResult.getMethod().getMethodName());
         }
 
     @AfterClass
     public static void tearDown(){
         LOG.info("++++++++++tearDown+++++++++");
+        WebDriverBase.teardown();
     }
-
 
 }

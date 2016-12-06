@@ -92,7 +92,7 @@ public class SeleniumBase {
         driver.manage().window().maximize();
         return driver;
     }
-@AfterClass
+
     public static void driverCleanUp(WebDriver driver){
         try{
             if(System.getProperty("profile")!= null) {
@@ -103,6 +103,7 @@ public class SeleniumBase {
                     Runtime.getRuntime().exec("taskkill /F /IM WerFault.exe");
                 }
             }
+            if(driver != null)
             driver.quit();
             LOG.info("Driver cleanup done.");
         }
