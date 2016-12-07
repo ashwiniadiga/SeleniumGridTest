@@ -6,7 +6,7 @@ Feature: User can navigate in Library
     Given User opens library url
     Then User goes to children page
 
-  @FIRSTTEST
+#  @FIRSTTEST
   Scenario:  User can navigate to children Books Movies and Music Page
     Given User opens library url
     Then User goes to children page
