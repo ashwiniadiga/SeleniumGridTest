@@ -1,5 +1,6 @@
 package com.test.util;
 
+import com.google.common.collect.ComparisonChain;
 import com.test.conf.SeleniumConfig;
 import com.test.constants.TestConstants;
 import org.apache.commons.io.FileUtils;
@@ -17,6 +18,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Comparator;
 import java.util.List;
 
 import static org.testng.Assert.assertTrue;
@@ -254,6 +256,15 @@ public class TestSupport {
     private static WebDriverWait createWebDriverWait(WebDriver driver, int waitTime) {
         return new WebDriverWait(driver, TestConstants.NORMAL_WAIT);
     }
+
+    private static Comparator<String> stringAlphabeticalComparator = new Comparator<String>() {
+        public int compare(String str1, String str2) {
+            return ComparisonChain.start().
+                    compare(str1,str2, String.CASE_INSENSITIVE_ORDER).
+                    compare(str1,str2).
+                    result();
+        }
+    };
     
 
 }
