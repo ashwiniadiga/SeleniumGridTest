@@ -15,11 +15,9 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 import static org.testng.Assert.assertTrue;
 
@@ -263,6 +261,23 @@ public class TestSupport {
                     compare(str1,str2, String.CASE_INSENSITIVE_ORDER).
                     compare(str1,str2).
                     result();
+        }
+    };
+
+    private static Comparator<String> StringDateComparator = new Comparator<String>() {
+        public int compare(String str1, String str2) {
+            DateFormat format1 = new SimpleDateFormat("EEE MMM dd HH:mm:ss Z yyyy");
+
+            try {
+                Date dateField1 = format1.parse(str1);
+                Date dateField2 = format1.parse(str2);
+                return dateField1.compareTo(dateField2);
+
+            }catch(Exception e){
+                LOG.info(e.toString());
+
+            }
+
         }
     };
     
